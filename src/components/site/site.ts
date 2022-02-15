@@ -61,6 +61,7 @@ export namespace SiteContent{
         email : string;
         subject : string;
         message : string;
+        contactno : string;
     }
 
     export interface Intro{
@@ -72,6 +73,13 @@ export namespace SiteContent{
      contact : Contact
     }
     
+    export interface Mailer 
+    {
+        serviceID : string,
+        templateID : string,
+        userID : string
+    }
+
     export  interface BuildPage{
         createMenu() :  Menu[];
         createIntro() : string;
@@ -81,6 +89,7 @@ export namespace SiteContent{
         createContact() : void;
         createMessage(request : Message): void
         createFooter() :  Footer
+        createMailer() : Mailer
     }
     
     }

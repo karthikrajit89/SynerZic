@@ -14,6 +14,7 @@ import { useScrollTo } from 'react-use-window-scroll';
 import React, {useEffect, useState} from 'react'
 import { useInput } from './components/hooks/input-hook';
 
+
 import {
     Routes,
     Route,
@@ -190,17 +191,17 @@ function AboutUs()
         
         <div className="icon-box wow fadeInUp">
           <div className="icon"><i className="fa fa-shopping-bag"></i></div>
-          <h4 className="title"><a href="">{contentData[0].title}</a></h4>
+          <h4 className="title">{contentData[0].title}</h4>
           <p className="description">{contentData[0].content}</p>
         </div>
         <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
           <div className="icon"><i className="fa fa-photo"></i></div>
-          <h4 className="title"><a href="">{contentData[1].title}</a></h4>
+          <h4 className="title">{contentData[1].title}</h4>
           <p className="description">{contentData[1].content}</p>
         </div>
         <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
           <div className="icon"><i className="fa fa-bar-chart"></i></div>
-          <h4 className="title"><a href="">{contentData[2].title}</a></h4>
+          <h4 className="title">{contentData[2].title}</h4>
           <p className="description">{contentData[2].content}</p>
         </div>
 
@@ -260,14 +261,14 @@ function Services()
           <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-analytics-outline" style={{color: '#ff689b'}}></i></div>
-              <h4 className="title"><a href="">{ServiceData.content[0].title}</a></h4>
+              <h4 className="title">{ServiceData.content[0].title}</h4>
               <p className="description">{ServiceData.content[0].content}</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-bookmarks-outline" style={{color: '#e9bf06'}}></i></div>
-              <h4 className="title"><a href="">{ServiceData.content[1].title}</a></h4>
+              <h4 className="title">{ServiceData.content[1].title}</h4>
               <p className="description">{ServiceData.content[1].content}</p>
             </div>
           </div>
@@ -275,14 +276,14 @@ function Services()
           <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-paper-outline" style={{color: '#3fcdc7'}}></i></div>
-              <h4 className="title"><a href=""></a>{ServiceData.content[2].title}</h4>
+              <h4 className="title">{ServiceData.content[2].title}</h4>
               <p className="description">{ServiceData.content[2].content}</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-speedometer-outline" style={{color:'#41cf2e'}}></i></div>
-              <h4 className="title"><a href="">{ServiceData.content[3].title}</a></h4>
+              <h4 className="title">{ServiceData.content[3].title}</h4>
               <p className="description">{ServiceData.content[3].content}</p>
             </div>
           </div>
@@ -290,14 +291,14 @@ function Services()
           <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-world-outline" style={{color: '#d6ff22'}}></i></div>
-              <h4 className="title"><a href="">{ServiceData.content[4].title}</a></h4>
+              <h4 className="title">{ServiceData.content[4].title}</h4>
               <p className="description">{ServiceData.content[4].content}</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-clock-outline" style={{color: '#4680ff'}}></i></div>
-              <h4 className="title"><a href="">{ServiceData.content[5].title}</a></h4>
+              <h4 className="title">{ServiceData.content[5].title}</h4>
               <p className="description">{ServiceData.content[5].content}</p>
             </div>
           </div>
@@ -371,24 +372,30 @@ function Contact()
 
 function ContactForm(props : any)
 {
+
   let usermessage :SiteContent.Message;
-  const{value:fname ,bind:bindname,reset:resetname} = useInput("");
-  const{value:femail ,bind:bindemail,reset:resetemail} = useInput("");
-  const{value:fsubject ,bind:bindsubject,reset:resetsubject} = useInput("");
-  const{value:fmessage ,bind:bindmessage,reset:resetmessage} = useInput("");
+
+  const{value:f_name ,bind:bindname,reset:resetname} = useInput("");
+  const{value:f_email ,bind:bindemail,reset:resetemail} = useInput("");
+  const{value:f_subject ,bind:bindsubject,reset:resetsubject} = useInput("");
+  const{value:f_message ,bind:bindmessage,reset:resetmessage} = useInput("");
+  const{value:f_contactno, bind:bindcontactno,reset:resetcontactno} =useInput("");
+
   const handleSubmit =(evt : any) =>{
         evt.preventDefault();
         usermessage = {
-          name : fname,
-          email :femail,
-          subject : fsubject,
-          message : fmessage
+          name : f_name,
+          email : f_email,
+          subject : f_subject,
+          message : f_message,
+          contactno : f_contactno,
         }
         dataapi.createMessage(usermessage)
         resetname();
         resetemail();
         resetsubject();
         resetmessage();
+        resetcontactno();
   }
 
   return(
@@ -403,6 +410,10 @@ function ContactForm(props : any)
                       </div>
                       <div className="form-group col-lg-6">
                         <input type="email" {...bindemail} className="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div className="validation"></div>
+                      </div>
+                      <div className="form-group col-lg-6">
+                        <input type="text" {...bindcontactno} className="form-control" name='contactno' id='contactno' placeholder='Your Contact' data-msg="Please enter your contact number"/>
                         <div className="validation"></div>
                       </div>
                     </div>
