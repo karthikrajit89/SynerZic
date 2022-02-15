@@ -26,8 +26,8 @@ import { SiteContent } from '../site/site';
         return this.impl.createContact();
     }
 
-    createMessage(request: SiteContent.Message){
-        this.impl.createMessage(request)
+    createMessage(request: SiteContent.Message) : boolean {
+        return this.impl.createMessage(request)
     }
 
     createFooter() : SiteContent.Footer{

@@ -4,10 +4,10 @@ import { SiteContent } from "../site/site";
 import {Implementation} from './impl';
 
 
-export const ContactUs =(request: SiteContent.Message) =>
+export function ContactUs (request: SiteContent.Message) : boolean
 {
     var mailCredentials = new Implementation('').createMailer();
-    
+    var isSent = true;
         var requestParams ={
         f_name : request.name,
         f_email : request.email,
@@ -19,8 +19,9 @@ export const ContactUs =(request: SiteContent.Message) =>
     //emailjs.sendForm('synerzIC','template_mbrho6i',form.current, )
     emailjs.send(mailCredentials.serviceID,mailCredentials.templateID,requestParams,mailCredentials.userID)
     .then(function(response){
-        console.log('Success!',response.status, response.text);
+        isSent = true;
     },function(error){
-        console.log('Failed...',error);
+        isSent = false;
     });
+    return isSent;
 }

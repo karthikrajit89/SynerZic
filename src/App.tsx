@@ -380,7 +380,7 @@ function ContactForm(props : any)
   const{value:f_subject ,bind:bindsubject,reset:resetsubject} = useInput("");
   const{value:f_message ,bind:bindmessage,reset:resetmessage} = useInput("");
   const{value:f_contactno, bind:bindcontactno,reset:resetcontactno} =useInput("");
-
+  const[isSuccessfullySent, setIsSuccessfullySent] = useState(false);
   const handleSubmit =(evt : any) =>{
         evt.preventDefault();
         usermessage = {
@@ -390,7 +390,15 @@ function ContactForm(props : any)
           message : f_message,
           contactno : f_contactno,
         }
-        dataapi.createMessage(usermessage)
+        if(dataapi.createMessage(usermessage))
+        {
+          setIsSuccessfullySent(true);
+          setTimeout(() => setIsSuccessfullySent(false), 3000);
+        }
+        else 
+        {
+          setIsSuccessfullySent(false);
+        }
         resetname();
         resetemail();
         resetsubject();
@@ -417,15 +425,27 @@ function ContactForm(props : any)
                         <div className="validation"></div>
                       </div>
                     </div>
-                    <div className="form-group">
+                  <div className="form-group">
                    <input type="text" className="form-control" {...bindsubject} id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                   <div className="validation"></div>
                  </div>
+                
                  <div className="form-group">
                   <textarea className="form-control" {...bindmessage} rows={5} data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  
                   <div className="validation"></div>
                 </div>
+                 {isSuccessfullySent &&
+                <div className='form-group'>
+                <div className="col-md-6 info">
+                  <i className="ion-ios-email-outline"></i>
+                  <p>We have received your request. We will contact you soon</p>
+                  </div>
+                  </div>
+                }
                 <div className="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                
+                
     </form>
     </div>
   )

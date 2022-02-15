@@ -139,8 +139,8 @@ let Footer : SiteContent.Footer={
         name : "Contact",
         order : 5,
         address :"Parramatta NSW",
-        email :"info@example.com",
-        phone :"+1 5589 55488 55",
+        email :"info@synerzic.net",
+        phone :"+61 431 929 634",
 
     },
     headerMessage :"Our potential team of developers expertise in software research, design, and development. We provide web and software development, website designing, E-Commerce solution, Tech-consulting, Redesigning and revamping, content management service businesses",
@@ -148,9 +148,9 @@ let Footer : SiteContent.Footer={
 }
 
 let Mailer : SiteContent.Mailer= {
-serviceID : "synerzIC",
+serviceID : "synerzicnet@2022",
 userID : "user_o1X2qKqb0R0sRJdY8PyI9",
-templateID :"template_mbrho6i"
+templateID :"template_9o42wzv"
 }
 
 export class Implementation implements SiteContent.BuildPage{
@@ -175,9 +175,9 @@ export class Implementation implements SiteContent.BuildPage{
         return Contact;
     }
     
-    createMessage(request: SiteContent.Message): void {
-        var data = ContactUs(request);
-        return;
+    createMessage(request: SiteContent.Message): boolean {
+       var isSent = ContactUs(request);
+        return isSent;
     }
     createPortfolio(): void {//} SiteContent.Portfolio{
         return;
