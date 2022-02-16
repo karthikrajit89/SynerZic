@@ -125,8 +125,8 @@ let Contact: SiteContent.Contact={
     id : 4,
     name : "Contact",
     address :"Parramatta NSW",
-    email :"info@example.com",
-    phone :"+1 5589 55488 55",
+    email :"info@synerzic.net",
+    phone :"+61 431 929 634",
     order : 4,
     gmap : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13259.592443459947!2d150.9999780008868!3d-33.81494236282079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a318e167af4f%3A0x5017d681632c600!2sParramatta%20NSW%202150!5e0!3m2!1sen!2sau!4v1644811471051!5m2!1sen!2sau"
 }

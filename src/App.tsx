@@ -381,6 +381,8 @@ function ContactForm(props : any)
   const{value:f_message ,bind:bindmessage,reset:resetmessage} = useInput("");
   const{value:f_contactno, bind:bindcontactno,reset:resetcontactno} =useInput("");
   const[isSuccessfullySent, setIsSuccessfullySent] = useState(false);
+  const[alertMessage, setalertMessage]= useState('');
+ 
   const handleSubmit =(evt : any) =>{
         evt.preventDefault();
         usermessage = {
@@ -390,8 +392,10 @@ function ContactForm(props : any)
           message : f_message,
           contactno : f_contactno,
         }
+        if(usermessage.name.trim() !=='' && usermessage.email.trim() !=='' && usermessage.subject.trim() !=='' && usermessage.message.trim() !==''){
         if(dataapi.createMessage(usermessage))
         {
+          setalertMessage("We have received your request. We will contact you soon");
           setIsSuccessfullySent(true);
           setTimeout(() => setIsSuccessfullySent(false), 3000);
         }
@@ -404,6 +408,13 @@ function ContactForm(props : any)
         resetsubject();
         resetmessage();
         resetcontactno();
+      }
+      else{
+        setalertMessage("Please provide all inputs in Contact Form");
+        setIsSuccessfullySent(true);
+        setTimeout(() => setIsSuccessfullySent(false), 3000);
+      }
+
   }
 
   return(
@@ -439,7 +450,7 @@ function ContactForm(props : any)
                 <div className='form-group'>
                 <div className="col-md-6 info">
                   <i className="ion-ios-email-outline"></i>
-                  <p>We have received your request. We will contact you soon</p>
+                  <p>{alertMessage}</p>
                   </div>
                   </div>
                 }
