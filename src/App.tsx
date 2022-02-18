@@ -1,10 +1,11 @@
-import './css/style.css'
+
 import './lib/bootstrap/css/bootstrap.min.css';
 import './lib/font-awesome/css/font-awesome.min.css'
 import './lib/animate/animate.min.css'
 import './lib/ionicons/css/ionicons.min.css'
 import './lib/owlcarousel/assets/owl.carousel.min.css'
 import './lib/lightbox/css/lightbox.min.css'
+import './css/style.css'
 import logo from './img/logo.png';
 import intro from './img/intro-img.svg';
 import aboutimg1 from './img/about-img.svg';
@@ -50,7 +51,7 @@ function Layout()
 {
   let Menus : SiteContent.Menu[] = Menuapi;
 
-  var headerClass = "fixed-top";
+  var headerClass  = "fixed-top";
 
   const[scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () =>{
@@ -311,10 +312,6 @@ function Services()
 
 }
 
-function Portfolio()
-{
-
-}
 
 function Contact()
 {
@@ -495,7 +492,6 @@ function Footer()
           </div>
         </div>
       </div>
-
     </footer>
   )
 }
