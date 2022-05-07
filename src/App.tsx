@@ -637,7 +637,7 @@ function CCR() {
           <li key={link}>
             {link}
             <br />
-            <a href={"/guru/" + link}>{link}</a>
+            <a href={process.env.PUBLIC_URL + "/guru/" + link}>{link}</a>
           </li>
         ))}
       </ul>
