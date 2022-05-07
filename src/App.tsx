@@ -615,7 +615,6 @@ const ScrollHook = () => {
 
 function CCR() {
   let demoLinks: SiteContent.ClientShow = dataapi.createClientShow();
-  //let list = <div>Try with your password</div>;
   var clientpassword = "";
   const {
     value: password,
@@ -628,8 +627,6 @@ function CCR() {
     clientpassword = password;
   };
 
-  //if (true) {
-  // alert(clientpassword);
   const list = (
     <div>
       <ul>
@@ -637,7 +634,12 @@ function CCR() {
           <li key={link}>
             {link}
             <br />
-            <a href={process.env.PUBLIC_URL + "/guru/" + link}>{link}</a>
+            <a
+              href={"https://ccrdemo.d2muap5lix8dhx.amplifyapp.com/" + link}
+              target="_blank"
+            >
+              {link}
+            </a>
           </li>
         ))}
       </ul>
