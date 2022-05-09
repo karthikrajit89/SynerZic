@@ -36,4 +36,8 @@ export class api {
   createClientShow(): SiteContent.ClientShow {
     return this.impl.createClientShow();
   }
+
+  createClients(): SiteContent.Clients[] {
+    return this.impl.createClients();
+  }
 }

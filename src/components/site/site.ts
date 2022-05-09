@@ -79,6 +79,14 @@ export namespace SiteContent {
     password: string;
   }
 
+  export interface Clients {
+    headerMessage: string;
+    referencelink: string;
+    Description: string;
+    imageLink: string;
+    appType: string;
+  }
+
   export interface BuildPage {
     createMenu(): Menu[];
     createIntro(): string;
@@ -90,5 +98,6 @@ export namespace SiteContent {
     createFooter(): Footer;
     createMailer(): Mailer;
     createClientShow(): ClientShow;
+    createClients(): Clients[];
   }
 }

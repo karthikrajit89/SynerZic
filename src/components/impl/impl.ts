@@ -177,6 +177,67 @@ let Links: SiteContent.ClientShow = {
   password: "guru0705",
 };
 
+let clientworked: SiteContent.Clients[] = [
+  {
+    headerMessage: "Acquico",
+    Description: "Facilitating your growth",
+    imageLink: "Acquico.jpg",
+    referencelink: "https://acquico.com/",
+    appType: "WebSite",
+  },
+  {
+    headerMessage: "Peaceful Pruity",
+    Description: "Online Medical equip Shop",
+    imageLink: "PeacefulPurity.jpg",
+    referencelink: "https://peacefulpurity.com/",
+    appType: "WebSite",
+  },
+  {
+    headerMessage: "BPHN Parent",
+    Description: "BPHN - ESSENTIAL SUPPORT SERVICES",
+    imageLink: "BronkParent.jpg",
+    referencelink: "https://bphn.org/",
+    appType: "WebSite",
+  },
+  {
+    headerMessage: "Simple Fine Food",
+    Description: "Passion for Perfection",
+    imageLink: "SimpleFineFood.jpg",
+    referencelink: "https://simplefinefoods.com/",
+    appType: "Ecommerce",
+  },
+  {
+    headerMessage: "Eggs & Soldiers",
+    Description:
+      "Eggs & Soldiers is the Middle East home of natural & eco-friendly products for Mum, Baby & Toddler",
+    imageLink: "Eggsoldiers.jpg",
+    referencelink: "https://www.eggsnsoldiers.com/",
+    appType: "Ecommerce",
+  },
+  {
+    headerMessage: "Artesian Tile",
+    Description: "Local and proud. With an office close to you",
+    imageLink: "Artesian.jpg",
+    referencelink: "https://artesiantitle.com/",
+    appType: "Web App",
+  },
+  {
+    headerMessage: "Sabile",
+    Description: "La Vie Scolaire au Quotildlien",
+    imageLink: "Sabile.jpg",
+    referencelink: "http://school.aadiyogitt.com/",
+    appType: "Web App",
+  },
+  {
+    headerMessage: "FINAGG PARTNER",
+    Description: "Quick cash flow",
+    imageLink: "Finagg.jpg",
+    referencelink:
+      "https://play.google.com/store/apps/details?id=com.finagg.partnerApp",
+    appType: "Mobile App",
+  },
+];
+
 export class Implementation implements SiteContent.BuildPage {
   constructor(private api: string) {}
 
@@ -216,5 +277,8 @@ export class Implementation implements SiteContent.BuildPage {
   }
   createClientShow(): SiteContent.ClientShow {
     return Links;
+  }
+  createClients(): SiteContent.Clients[] {
+    return clientworked;
   }
 }

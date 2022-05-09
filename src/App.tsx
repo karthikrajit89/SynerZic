@@ -94,6 +94,7 @@ function Layout() {
       <main id="main">
         <AboutUs />
         <Services />
+        <ClientsWorked />
         <Contact />
         <Footer />
         <ScrollHook />
@@ -355,6 +356,52 @@ function Services() {
               <p className="description">{ServiceData.content[5].content}</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ClientsWorked() {
+  let ClientsWorkedfor: SiteContent.Clients[] = dataapi.createClients();
+
+  return (
+    <section id="portfolio" className="clearfix">
+      <div className="container">
+        <div className="section-header">
+          <h3 className="section-title">We Worked for</h3>
+          <p>
+            We have listed few of our clients. Click the image to take you there
+          </p>
+        </div>
+        <div className="row portfolio-container">
+          {ClientsWorkedfor.map((client) => (
+            <div className="col-lg-3 col-md-6 portfolio-item filter-web">
+              <div className="portfolio-wrap">
+                <img
+                  src={require(`./img/portfolio/${client.imageLink}`)}
+                  className="img-fluid"
+                  alt=""
+                ></img>
+                <div className="portfolio-info">
+                  <h4>
+                    <a href="#">{client.headerMessage}</a>
+                  </h4>
+                  <p>{client.appType}</p>
+                  <div>
+                    <a
+                      href={client.referencelink}
+                      target="_blank"
+                      className="link-details"
+                      title="More Details"
+                    >
+                      <i className="ion ion-android-open"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
