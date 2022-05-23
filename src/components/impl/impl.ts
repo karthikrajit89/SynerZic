@@ -164,13 +164,7 @@ let Mailer: SiteContent.Mailer = {
   templateID: "template_9o42wzv",
 };
 
-const showlinks = [
-  "index.html",
-  "index_blue.html",
-  "index_green.html",
-  "index_pink.html",
-  "index_purple.html",
-];
+const showlinks = ["index.html"];
 
 let Links: SiteContent.ClientShow = {
   staticlinks: showlinks,
