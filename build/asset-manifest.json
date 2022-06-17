@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b1f79a06.css",
-    "main.js": "/static/js/main.15b53029.js",
+    "main.js": "/static/js/main.f85baf23.js",
     "static/js/787.52334eb7.chunk.js": "/static/js/787.52334eb7.chunk.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/ionicons.svg?v=2.0.0": "/static/media/ionicons.b45d332f6829d6813600.svg",
@@ -26,14 +26,18 @@
     "static/media/logo.png": "/static/media/logo.0e3256c3235a4d11f98f.png",
     "static/media/intro-bg.png": "/static/media/intro-bg.824f8dde9bac8fb30ace.png",
     "static/media/app2.jpg": "/static/media/app2.4dbbf44ca3cfcc7f840a.jpg",
+    "static/media/Acquico.jpg": "/static/media/Acquico.e7187ba5014e94755d7c.jpg",
     "static/media/about-extra-1.svg": "/static/media/about-extra-1.b94284a6a43508e7c1ee1c563fdc024c.svg",
+    "static/media/Eggsoldiers.jpg": "/static/media/Eggsoldiers.75410830e6d4cd738571.jpg",
+    "static/media/Finagg.jpg": "/static/media/Finagg.5d567fc8d1492631a1e0.jpg",
+    "static/media/SimpleFineFood.jpg": "/static/media/SimpleFineFood.332d03a5cd4521f66cea.jpg",
     "index.html": "/index.html",
     "main.b1f79a06.css.map": "/static/css/main.b1f79a06.css.map",
-    "main.15b53029.js.map": "/static/js/main.15b53029.js.map",
+    "main.f85baf23.js.map": "/static/js/main.f85baf23.js.map",
     "787.52334eb7.chunk.js.map": "/static/js/787.52334eb7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1f79a06.css",
-    "static/js/main.15b53029.js"
+    "static/js/main.f85baf23.js"
   ]
 }
